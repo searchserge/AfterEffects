@@ -1,0 +1,6 @@
+R = thisLayer.sourceRectAtTime();
+T = R.top;
+L = R.left;
+W = R.width;
+H = R.height;
+[L+W/2,T+H/2];
