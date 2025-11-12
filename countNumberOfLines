@@ -1,0 +1,2 @@
+//counts number of lines in a text field
+thisComp.layer("Verse").text.sourceText.split("\r").length
