@@ -1,0 +1,32 @@
+
+OnShape Size
+// Reference the text layer
+textLayer = thisComp.layer("Text Layer"); // Change "Text Layer" to the name of your text layer
+
+// Define the padding values (in pixels)
+paddingWidth = 20; // Set your desired padding width here
+paddingHeight = 20; // Set your desired padding height here
+
+// Get the rectangle representing the text layer's dimensions
+textRect = textLayer.sourceRectAtTime();
+
+// Extract the width and height of the text rectangle
+textWidth = textRect.width;
+textHeight = textRect.height;
+
+// Calculate the new size of the shape layer with padding added to both width and height
+[textWidth + paddingWidth * 2, textHeight + paddingHeight * 2];
+
+
+OnShape Postion
+// Reference the text layer
+textLayer = thisComp.layer("Text Layer"); // Change "Text Layer" to the name of your text layer
+
+// Get the rectangle representing the text layer's dimensions
+textRect = textLayer.sourceRectAtTime();
+
+// Get the position of the text layer
+textPos = textLayer.position;
+
+// Calculate the new position for the shape layer, centered based on the text layer's position and dimensions
+[textPos[0] + textRect.left + textRect.width / 2, textPos[1] + textRect.top + textRect.height / 2];
