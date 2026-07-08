@@ -1,0 +1,29 @@
+action = comp(name).layer("action");
+ 
+n = 0;
+if (marker.numKeys > 0){
+  n = marker.nearestKey(time).index;
+  if (marker.key(n).time > time){
+    n--;
+  }
+}
+ 
+if (n == 0){
+  0
+}else{
+  m = marker.key(n);
+  myComment = m.comment;
+  t = time - m.time;
+  try{
+    actMarker = action.marker.key(myComment);
+    if (action.marker.numKeys > actMarker.index){
+      tMax = action.marker.key(actMarker.index + 1).time - actMarker.time;
+    }else{
+      tMax = action.outPoint - actMarker.time;
+    }
+    t = Math.min(t, tMax);
+    actMarker.time + t;
+  }catch (err){
+    0
+  }
+}
